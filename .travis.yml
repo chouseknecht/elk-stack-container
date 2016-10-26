@@ -18,6 +18,10 @@ script:
   - docker version
   - docker-compose version
   - docker info
+  - docker rm --force $(docker ps -q -a)
+  - docker rmi --force $(docker images -q -a)
+  - docker ps 
+  - docker images
 
   # Set create_example to 'true'
   - "cat ansible/main.yml | sed 's/create_example: false/create_example: true/' >ansible/main.yml"
