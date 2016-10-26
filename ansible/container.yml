@@ -13,6 +13,11 @@ services:
     working_dir: /usr/share/elasticsearch/bin
     command: [./elasticsearch]
 
+    #volumes:
+    #- your_volume:/usr/share/elasticsearch/data
+    #- your_volume:/usr/share/elasticsearch/logs
+    #- your_volume:/usr/share/elasticsearch/config
+
   logstash:
     image: centos:7
     ports:
@@ -25,6 +30,9 @@ services:
     environment:
     - JAVACMD=/usr/bin/java
     entrypoint: ["/usr/bin/entrypoint.sh"]
+
+    #volumes:
+    #- your_configuration_volume:/etc/logstash/conf.d
 
   kibana:
     image: centos:7
