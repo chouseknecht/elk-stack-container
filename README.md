@@ -34,6 +34,7 @@ You can run the application with sample data or without. If you wish to load som
 
 To run the application, build the Docker images for the app, then run containers based on those built images by executing the following commands:
 
+```
 # Set the working directory to your project root
 $ cd my-elk-stack
 
