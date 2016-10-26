@@ -1,7 +1,8 @@
 # elk-stack
 
-An [Ansible Container project](https://github.com/ansible/ansible-container) that stands up an Elastic (or ELK) Stack. Use this project 
-as a starting point for your own ELK Stack project by running the following:
+An [Ansible Container project](https://github.com/ansible/ansible-container) that stands up a fully functioning Elastic (or ELK) Stack using Docker containers.
+
+Use this project as a starting point for your own ELK Stack project by running the following:
 
 ```
 # Create an empty project directory
@@ -17,10 +18,15 @@ $ ansible-container init choucknecht.elk-stack
 You now have your own *elk-stack* project that you can customize to fit your needs. If you're not sure where to start, take a look 
 at the following: 
 
-- [container.yml](./ansible/container.yml) - the orchestration document containing the Docker Compose used to start the containers
-- [main.yml](./ansible/main.yml) - the playbook used to build the images. Install more logstash plugins, add custom indexes, and make any other changes
-by adding additional tasks and roles to this playbook.kk 
-- [Ansible Container docs](https://docs.ansible.com/ansible-container) - learn more about how to build microservice apps using Ansible Container.
+[container.yml](./ansible/container.yml)
+> The orchestration document containing the Docker Compose used to build and run the application. 
+
+[main.yml](./ansible/main.yml) 
+> The [Ansible](https://github.com/ansible) playbook used to build the application images. Install more logstash plugins, add custom indexes, and make any other changes
+by adding additional tasks and roles to this playbook.
+
+[Ansible Container docs](https://docs.ansible.com/ansible-container)
+> Visit the docs site to learn more about using Ansible Container to build apps using Docker containers.
 
 ## Running the application
 
@@ -32,7 +38,7 @@ You can run the application with sample data or without. If you wish to load som
     create_example: true
 ```
 
-To run the application, build the Docker images for the app, then run containers based on those built images by executing the following commands:
+To run the application, build the Docker images for the app, then run the app using the newly built images. It's as simple as executing the following commands:
 
 ```
 # Set the working directory to your project root
@@ -45,7 +51,7 @@ $ ansible-container build
 $ ansible-container run
 ```
 
-### Access the Kibana web site
+### Access the Kibana web server 
 
 Once you have the ELK stack up running, you can access the Kibana server on port 5601 of your Docker Engine host. If you're running
 Docker Machine, then you should be able to do the following from a terminal session, replacing the word *default* with the name of 
@@ -62,8 +68,9 @@ becomes visible, click the green *Create* button. Click on the *Discover* menu t
 
 ### Load the sample dashboard
 
-If you loaded the sample data, go to Settings > Objects, and click Import. Select the *apache_kibana.json* file found in your the root directory of
-your project. After the file loads, click on the *Dashboard* ment to see the sample dashbaord:
+If you loaded the sample Apache data, the sample dashboard provides a cool example of how to create visualizations in Kibana. To access it you'll 
+need to import the dashboard config file by going to Settings > Objects, and clicking Import. Select the *apache_kibana.json* file found in the 
+root directory of your project. After the file loads, click the *Dashboard* menu option at the top of the page to see the sample dashbaord:
 
 <img src="./dashboard.png" /> 
 
