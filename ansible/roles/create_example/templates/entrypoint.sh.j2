@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -d /apache_example ]; then
+    cd /apache_example
+    ansible-playbook -i inventory load_example.yml
+    cd -
+fi
+
+exec "$@"

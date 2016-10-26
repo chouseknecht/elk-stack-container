@@ -1,0 +1,74 @@
+- name: Add entrypoint script
+  template:
+    src: entrypoint.sh.j2
+    dest: /usr/bin/entrypoint.sh
+    mode: 0775  
+    owner: root
+    group: root
+
+- name: Install epel-release   
+  yum:
+    name: epel-release
+    state: present 
+  when: create_example
+
+- name: Install Ansible  
+  yum:
+    name: ansible
+    state: present  
+  when: create_example
+
+- name: Create example dir
+  file:
+    path: /apache_example
+    state: directory
+    owner: logstash
+    group: root
+    mode: 0775
+  when: create_example
+
+- name: Download example files
+  get_url:
+    url: "{{ item.url }}"
+    dest: "/apache_example/{{ item.dest }}"
+    owner: logstash
+    group: root
+    mode: 0664
+  with_items:
+    - url: "https://raw.githubusercontent.com/elastic/examples/master/ElasticStack_apache/apache_logstash.conf"
+      dest: apache_logstash.conf
+    - url: "https://raw.githubusercontent.com/elastic/examples/master/ElasticStack_apache/apache_template.json"
+      dest: apache_template.json
+    - url: "https://raw.githubusercontent.com/elastic/examples/master/ElasticStack_apache/apache_kibana.json"
+      dest: apache_kibana.json
+    - url: "https://raw.githubusercontent.com/elastic/examples/master/ElasticStack_apache/apache_logs"
+      dest: apache_logs 
+  when: create_example
+
+- name: Template the config
+  template:
+    src: apache_logstash.conf.j2 
+    dest: /apache_example/apache_logstash.conf
+    owner: logstash
+    group: root 
+    mode: 0664
+  when: create_example
+
+- name: Template the playbook 
+  template:
+    src: load_example.yml.j2 
+    dest: /apache_example/load_example.yml
+    owner: logstash
+    group: root 
+    mode: 0664
+  when: create_example
+
+- name: Template the inventory file 
+  template:
+    src: inventory.j2 
+    dest: /apache_example/inventory
+    owner: logstash
+    group: root 
+    mode: 0664
+  when: create_example
+

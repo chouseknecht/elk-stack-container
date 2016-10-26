@@ -1,0 +1,17 @@
+- name: Load data
+  hosts: localhost
+  connection: local 
+  gather_facts: no
+  tasks:
+
+  - name: Wait for elasticsearch to be available
+    wait_for:
+      host: elasticsearch
+      port: 9200
+      delay: 10
+      timeout: 60
+
+  - name: Load the sample data
+    shell: "cat apache_logs | /opt/logstash/bin/logstash -f apache_logstash.conf"
+    args:
+      chdir: /apache_example

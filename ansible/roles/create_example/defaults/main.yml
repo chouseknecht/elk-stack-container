@@ -1,0 +1,3 @@
+---
+create_example: no
+create_example_elasticsearch_host: http://elasticsearch:9200

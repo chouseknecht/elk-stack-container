@@ -1,0 +1,5 @@
+- src: chouseknecht.elasticsearch-container
+- src: geerlingguy.java
+  version: 1.7.0
+- src: chouseknecht.logstash-container
+- src: chouseknecht.kibana-container
