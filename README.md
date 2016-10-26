@@ -12,7 +12,7 @@ $ mkdir my-elk-stack
 $ cd my-elk-stack
 
 # Initialize your new project with this project
-$ ansible-container init choucknecht.elk-stack
+$ ansible-container init choucknecht.elk-stack-container
 ```
 
 You now have your own *elk-stack* project that you can customize to fit your needs. If you're not sure where to start, take a look 
@@ -72,7 +72,7 @@ If you loaded the sample Apache data, the sample dashboard provides a cool examp
 need to import the dashboard config file by going to Settings > Objects, and clicking Import. Select the *apache_kibana.json* file found in the 
 root directory of your project. After the file loads, click the *Dashboard* menu option at the top of the page to see the sample dashbaord:
 
-<img src="./dashboard.png" /> 
+<img src="https://github.com/chouseknecht/elk-stack-container/blob/master/dashboard.png" alt="Example visualization dashboard for Apache log data"/> 
 
 
 ## Requirements
