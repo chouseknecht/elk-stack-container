@@ -3,7 +3,7 @@
   connection: local  
   gather_facts: no
   vars:
-    host_ip: '192.168.99.100'
+    host_ip: '0.0.0.0'
   tasks:
  
   - name: Wait for services to start listening
