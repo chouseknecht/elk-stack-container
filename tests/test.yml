@@ -1,0 +1,40 @@
+- name: Integration tests
+  hosts: localhost
+  connection: local  
+  gather_facts: no
+  vars:
+    host_ip: '192.168.99.100'
+  tasks:
+ 
+  - name: Wait for services to start listening
+    wait_for:
+      host: "{{ host_ip }}"
+      port: "{{ item }}" 
+      delay: 10
+      timeout: 60
+    with_items:
+      - 9200
+      - 5044
+      - 5601
+
+  - name: Get apache_elk_example index count
+    uri:
+      url: http://{{ host_ip }}:9200/apache_elk_example/_count?pretty
+      body_format: raw 
+    register: output
+
+  - name: Should have 1000 or more log entries
+    assert:
+      that: output.json.count >= 1000
+     
+  - name: Send a request to the Kibana server
+    uri:
+      url: "http://{{ host_ip }}:5601/app/kibana"
+      body_format: raw
+      return_content: yes
+    register: output 
+
+  - name: Should be loading a whole bunch of code
+    assert: 
+      that: "'loading a whole bunch of code' in output.content"
+ 

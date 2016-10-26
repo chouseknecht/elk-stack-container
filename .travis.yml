@@ -1,0 +1,36 @@
+language: python
+dist: trusty
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - sudo apt-add-repository 'deb http://archive.ubuntu.com/ubuntu trusty-backports universe'
+  - sudo apt-get update -qq
+  - sudo apt-get install -y -o Dpkg::Options::="--force-confold" --force-yes docker-engine
+
+install:
+  - pip install git+https://github.com/ansible/ansible-container.git 
+  - pip install ansible
+
+script:
+  - docker version
+  - docker-compose version
+  - docker info
+
+  # Set create_example to 'true'
+  - cat ansible/main.yml | sed 's/create_example: false/create_example: true/' >ansible/main.yml
+
+  # Build and run the app in the background
+  - ansible-container build
+  - ansible-container run -d
+  - docker ps
+
+  # Run tests
+  - cd tests
+  - ansible-playbook test.yml
+
+notifications:
+  email: false
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
