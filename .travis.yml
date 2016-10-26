@@ -20,7 +20,7 @@ script:
   - docker info
 
   # Set create_example to 'true'
-  - cat ansible/main.yml | sed 's/create_example: false/create_example: true/' >ansible/main.yml
+  - "cat ansible/main.yml | sed 's/create_example: false/create_example: true/' >ansible/main.yml"
 
   # Build and run the app in the background
   - ansible-container build
