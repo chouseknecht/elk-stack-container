@@ -17,6 +17,10 @@
       - 5044
       - 5601
 
+  - name: Wait some more
+    wait_for:
+        timeout: 180
+
   - name: Get apache_elk_example index count
     uri:
       url: http://{{ host_ip }}:9200/apache_elk_example/_count?pretty
