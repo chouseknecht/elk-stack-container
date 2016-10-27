@@ -22,7 +22,8 @@ script:
   - docker images
 
   # Set create_example to 'true'
-  - "cat ansible/main.yml | sed 's/create_example: false/create_example: true/' >ansible/main.yml"
+  - "cat ansible/main.yml | sed 's/create_example: false/create_example: true/' >ansible/main.yml.new"
+  - mv ansible/main.yml.new ansible/main.yml
 
   # Let's see what will we're running
   - cat ansible/main.yml
