@@ -1,5 +1,7 @@
 # elk-stack
 
+[![Build Status](https://travis-ci.org/chouseknecht/elk-stack-container.svg?branch=master)](https://travis-ci.org/chouseknecht/elk-stack-container)
+
 An [Ansible Container project](https://github.com/ansible/ansible-container) that stands up a fully functioning Elastic (or ELK) Stack using Docker containers.
 
 Use this project as a starting point for your own ELK Stack project by running the following:
