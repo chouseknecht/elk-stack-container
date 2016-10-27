@@ -55,8 +55,8 @@ $ ansible-container run
 
 ### Access the Kibana web server 
 
-Once you have the ELK stack up running, you can access the Kibana server on port 5601 of your Docker Engine host. If you're running
-Docker Machine, then you should be able to do the following from a terminal session, replacing the word *default* with the name of 
+Once you have the ELK stack running, you can access the Kibana server on port 5601 of your Docker Engine host. If you're running
+Docker Machine, you should be able to do the following from a terminal session, replacing the word *default* with the name of 
 your Docker Machine instance:
 
 ```
@@ -66,7 +66,7 @@ $ open http://$(docker-machine ip default):5601
 ### View the sample data
 
 If you loaded the sample Apache data, go to Settings > Indices, and change the *Index name or pattern* value to `apache_elk_example`. When it
-becomes visible, click the green *Create* button. Click on the *Discover* menu to view the data.
+becomes visible, click the green *Create* button. Click on the *Discover* menu at the top of the page to view the data.
 
 ### Load the sample dashboard
 
