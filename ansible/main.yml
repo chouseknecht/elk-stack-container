@@ -2,6 +2,7 @@
   roles:
   - role: chouseknecht.elasticsearch-container
     elasticsearch_network_host: 0.0.0.0
+    elasticsearch_discovery_hosts: ['elasticsearch']
     elasticsearch_http_port: 9200
     elasticsearch_script_inline: true
     elasticsearch_script_indexed: true
@@ -9,6 +10,7 @@
     elasticsearch_logs: /usr/share/elasticsearch/logs
     elasticsearch_config: /usr/share/elasticsearch/config
     java_home: ''
+
 
 - hosts: logstash
   roles:
@@ -28,7 +30,7 @@
   # Set create_example to 'true', if sameple data should be loaded
   #  into apache_elk_example index. 
   - role: create_example
-    create_example: false 
+    create_example: true
  
 - hosts: kibana
   roles:

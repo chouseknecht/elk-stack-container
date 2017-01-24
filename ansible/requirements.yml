@@ -1,4 +1,4 @@
-- src: chouseknecht.elasticsearch-container
+- src: git-https://github.com/fabianvf/elasticsearch-container.git
 - src: geerlingguy.java
   version: 1.7.0
 - src: chouseknecht.logstash-container
