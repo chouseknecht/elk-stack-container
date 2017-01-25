@@ -25,7 +25,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -51,7 +51,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"apache_elk_example\",\"key\":\"response\",\"value\":\"200\",\"disabled\":false,\"negate\":true,\"apply\":true},\"query\":{\"match\":{\"response\":{\"query\":200,\"type\":\"phrase\"}}}}]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"apache_elastic_example\",\"key\":\"response\",\"value\":\"200\",\"disabled\":false,\"negate\":true,\"apply\":true},\"query\":{\"match\":{\"response\":{\"query\":200,\"type\":\"phrase\"}}}}]}"
       }
     }
   },
@@ -60,11 +60,11 @@
     "_type": "visualization",
     "_source": {
       "title": "Traffic by Country & Device",
-      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"geoip.country_name.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":false}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"useragent.device.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"geoip.country_name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":false}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"useragent.device.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"apache_elk_example\",\"key\":\"useragent.device.raw\",\"value\":\"Other\",\"disabled\":false,\"negate\":true,\"apply\":true},\"query\":{\"match\":{\"useragent.device.raw\":{\"query\":\"Other\",\"type\":\"phrase\"}}}},{\"meta\":{\"index\":\"apache_elk_example\",\"key\":\"useragent.device.raw\",\"value\":\"Spider\",\"disabled\":false,\"negate\":true,\"apply\":true},\"query\":{\"match\":{\"useragent.device.raw\":{\"query\":\"Spider\",\"type\":\"phrase\"}}}}]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"apache_elastic_example\",\"key\":\"useragent.device.raw\",\"value\":\"Other\",\"disabled\":false,\"negate\":true,\"apply\":true},\"query\":{\"match\":{\"useragent.device.raw\":{\"query\":\"Other\",\"type\":\"phrase\"}}}},{\"meta\":{\"index\":\"apache_elastic_example\",\"key\":\"useragent.device.raw\",\"value\":\"Spider\",\"disabled\":false,\"negate\":true,\"apply\":true},\"query\":{\"match\":{\"useragent.device.raw\":{\"query\":\"Spider\",\"type\":\"phrase\"}}}}]}"
       }
     }
   },
@@ -73,11 +73,11 @@
     "_type": "visualization",
     "_source": {
       "title": "Traffic by Country & OS",
-      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"geoip.country_name.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":false}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"useragent.os.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"geoip.country_name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":false}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"useragent.os.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"apache_elk_example\",\"key\":\"useragent.os.raw\",\"value\":\"Other\",\"disabled\":false,\"negate\":true,\"apply\":true},\"query\":{\"match\":{\"useragent.os.raw\":{\"query\":\"Other\",\"type\":\"phrase\"}}}}]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"apache_elastic_example\",\"key\":\"useragent.os.raw\",\"value\":\"Other\",\"disabled\":false,\"negate\":true,\"apply\":true},\"query\":{\"match\":{\"useragent.os.raw\":{\"query\":\"Other\",\"type\":\"phrase\"}}}}]}"
       }
     }
   },
@@ -90,7 +90,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -103,7 +103,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -112,11 +112,11 @@
     "_type": "visualization",
     "_source": {
       "title": "Unique Visitors",
-      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"40\",\"spyPerPage\":10},\"aggs\":[{\"id\":\"2\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"geoip.ip.raw\"}}],\"listeners\":{}}",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"40\",\"spyPerPage\":10},\"aggs\":[{\"id\":\"2\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"geoip.ip\"}}],\"listeners\":{}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -129,7 +129,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -142,7 +142,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"apache_elk_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"apache_elastic_example\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }
