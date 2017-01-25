@@ -32,7 +32,7 @@ output {
   
   elasticsearch {
     hosts => "{{ create_example_elasticsearch_host }}"
-    index => "apache_elk_example"
+    index => "apache_elastic_example"
     template => "/apache_example/apache_template.json"
     template_name => "apache_elk_example"
     template_overwrite => true

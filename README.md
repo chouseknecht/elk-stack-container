@@ -65,7 +65,7 @@ $ open http://$(docker-machine ip default):5601
 
 ### View the sample data
 
-If you loaded the sample Apache data, go to Settings > Indices, and change the *Index name or pattern* value to `apache_elk_example`. When it
+If you loaded the sample Apache data, go to Settings > Indices, and change the *Index name or pattern* value to `apache_elastic_example`. When it
 becomes visible, click the green *Create* button. Click on the *Discover* menu at the top of the page to view the data.
 
 ### Load the sample dashboard
